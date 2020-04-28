@@ -1,5 +1,8 @@
 package com.example.android.fuzzy_waddle.model;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
 
 import android.text.TextUtils;
 

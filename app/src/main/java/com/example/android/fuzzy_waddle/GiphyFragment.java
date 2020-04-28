@@ -1,5 +1,9 @@
 package com.example.android.fuzzy_waddle;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;

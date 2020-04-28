@@ -1,5 +1,9 @@
 package com.example.android.fuzzy_waddle.concurrent;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;

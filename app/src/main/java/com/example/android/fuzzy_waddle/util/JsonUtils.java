@@ -1,5 +1,9 @@
 package com.example.android.fuzzy_waddle.util;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

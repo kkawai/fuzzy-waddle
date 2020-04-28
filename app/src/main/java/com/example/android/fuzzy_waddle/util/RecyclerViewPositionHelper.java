@@ -2,6 +2,9 @@
 
 package com.example.android.fuzzy_waddle.util;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
 
 import android.view.View;
 

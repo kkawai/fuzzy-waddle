@@ -16,6 +16,10 @@
  */
 package com.example.android.fuzzy_waddle.util;
 
+/*
+This module borrowed from open source Signal android app https://github.com/signalapp/Signal-Android
+ */
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
