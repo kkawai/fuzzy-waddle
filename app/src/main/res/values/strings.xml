@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">fuzzy-waddle</string>
+    <string name="giphy_fragment__nothing_found">Nothing found</string>
+
+</resources>
