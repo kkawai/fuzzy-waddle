@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity implements GiphyAdapter.OnGi
     getSupportFragmentManager().beginTransaction()
             .add(R.id.fragment,
                     GiphyGifFullscreenFragment
-                            .newInstance(giphyImage.getGifUrl(), giphyImage.getGifAspectRatio()))
+                            .newInstance(giphyImage.getGifUrl(),
+                                    giphyImage.getStillUrl(),
+                                    giphyImage.getGifAspectRatio()))
             .addToBackStack(null).commit();
   }
 

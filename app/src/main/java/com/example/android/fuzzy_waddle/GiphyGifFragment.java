@@ -5,10 +5,12 @@ This module borrowed from open source Signal android app https://github.com/sign
  */
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.android.fuzzy_waddle.model.GiphyImage;
 import com.example.android.fuzzy_waddle.net.GiphyGifLoader;
-import com.example.android.fuzzy_waddle.util.ViewUtil;
 
 import java.util.List;
 
@@ -25,24 +27,24 @@ public class GiphyGifFragment extends GiphyFragment {
   }
 
   @Override
-  public void onActivityCreated(Bundle bundle) {
-    super.onActivityCreated(bundle);
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
+    View view = super.onCreateView(inflater, viewGroup, bundle);
+    ((SearchView)view.findViewById(R.id.gifSearchBar))
+            .setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+              @Override
+              public boolean onQueryTextSubmit(String query) {
+                if (query.length() < 2) {
+                  return false;
+                }
+                setSearchString(query);
+                return false;
+              }
 
-    SearchView searchView = ViewUtil.findById(getView(), R.id.gifSearchBar);
-    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-      @Override
-      public boolean onQueryTextSubmit(String query) {
-        if (query.length() < 2) {
-          return false;
-        }
-        setSearchString(query);
-        return false;
-      }
-
-      @Override
-      public boolean onQueryTextChange(String newText) {
-        return false;
-      }
-    });
+              @Override
+              public boolean onQueryTextChange(String newText) {
+                return false;
+              }
+            });
+    return view;
   }
 }
