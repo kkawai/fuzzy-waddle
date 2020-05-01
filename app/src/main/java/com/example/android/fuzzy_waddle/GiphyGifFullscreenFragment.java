@@ -3,7 +3,6 @@ package com.example.android.fuzzy_waddle;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +22,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class GiphyGifFullscreenFragment extends Fragment {
-
-  private GiphyGifFullscreenFragment(){}
 
   private RequestManager requestManager;
   private AspectRatioImageView aspectRatioImageView;
@@ -59,12 +56,9 @@ public class GiphyGifFullscreenFragment extends Fragment {
 
               @Override
               public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                try {
-                  getView().findViewById(R.id.progress_horizontal).setVisibility(View.GONE);
-                }catch (Exception e){
-                  //todo
-                }
-                return false;
+                  if (getActivity() != null && getView() != null)
+                    getView().findViewById(R.id.progress_horizontal).setVisibility(View.GONE);
+                  return false;
               }
             })
             .thumbnail(thumbnailRequest)
@@ -76,7 +70,6 @@ public class GiphyGifFullscreenFragment extends Fragment {
   public void onDestroy() {
     if (requestManager != null && aspectRatioImageView != null) {
       requestManager.clear(aspectRatioImageView);
-      Log.w("blah","cleared requests");
     }
     super.onDestroy();
   }
